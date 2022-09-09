@@ -1,0 +1,21 @@
+package br.org.serratec.enums;
+
+public enum CalculoINSS {
+
+	RENDAA(1212.00, 0.075), RENDAB(2427.35, 0.09), RENDAC(3641.03, 0.12), RENDAD(7087.22, 0.14);
+
+	private Double salario, aliquota;
+
+	private CalculoINSS(Double salario, Double aliquota) {
+		this.salario = salario;
+		this.aliquota = aliquota;
+	}
+
+	public Double getSalario() {
+		return salario;
+	}
+
+	public Double getAliquota() {
+		return aliquota;
+	}
+}

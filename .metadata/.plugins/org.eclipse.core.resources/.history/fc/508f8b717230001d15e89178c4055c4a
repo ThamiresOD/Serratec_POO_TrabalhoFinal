@@ -1,0 +1,6 @@
+package br.org.serratec.model;
+
+public class Funcionario extends Pessoa{
+	private 
+
+}
