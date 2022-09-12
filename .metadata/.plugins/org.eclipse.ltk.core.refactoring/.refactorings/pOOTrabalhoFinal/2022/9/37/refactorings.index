@@ -1,2 +1,5 @@
 1662753798793	Rename type 'CalculoAliquota'
 1662754845788	Rename type 'CalculoINSS'
+1662770679160	Encapsulate field 'salarioLiquido'
+1662771699799	Delete element
+1662772627630	Delete element
