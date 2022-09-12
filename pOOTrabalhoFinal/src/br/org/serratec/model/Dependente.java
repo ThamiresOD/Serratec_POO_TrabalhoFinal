@@ -14,7 +14,7 @@ public class Dependente extends Pessoa {
 
 	@Override
 	public String toString() {
-		return "Dependente parentesco: " + parentesco + "]";
+		return "\nDependente :"  + nome + " " + cpf + " " + dataNascimento + "parentesco + \n]";
 	}
 
 	public String getParentesco() {
