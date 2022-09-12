@@ -1,0 +1,20 @@
+package br.org.serratec.teste;
+
+public class TesteTrabalho {
+	public static void main(String[] args) {
+		System.out.println("Teste");
+	}
+
+	
+	// LEITURA DO ARQUIVO
+	
+	// CALCULOS
+	//1> INSS
+	//2> DEP
+	//3> IR
+	
+	// COMPARACAO EXCEPTIONS
+	
+	// GRAVACAO DO ARQUIVO
+	
+}

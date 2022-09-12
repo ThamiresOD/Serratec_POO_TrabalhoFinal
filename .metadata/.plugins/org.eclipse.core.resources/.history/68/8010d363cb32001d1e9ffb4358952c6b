@@ -1,0 +1,31 @@
+package br.org.serratec.teste;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import br.org.serratec.model.Funcionario;
+
+public class TesteTrabalho {
+	public static void main(String[] args) {
+		List<Funcionario> funcionarios = new ArrayList();
+		Funcionario fun1 =  new Funcionario("Nome", "1111", LocalDate.of(2022,2,2), 200., null);
+		funcionarios.add(fun1);
+		
+		fun1.calcularSalarioLiquido();
+		System.out.println(funcionarios);
+	}
+
+	
+	// LEITURA DO ARQUIVO
+	
+	// CALCULOS
+	//1> INSS
+	//2> DEP
+	//3> IR
+	
+	// COMPARACAO EXCEPTIONS
+	
+	// GRAVACAO DO ARQUIVO
+	
+}

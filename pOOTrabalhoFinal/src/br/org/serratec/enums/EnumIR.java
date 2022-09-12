@@ -2,7 +2,7 @@ package br.org.serratec.enums;
 
 public enum EnumIR {
 
-	RENDAA(1903.00, 1.,0.), RENDAB(2826.65, 0.075, 142.80), RENDAC(3751.05, 0.15, 354.80), RENDAD(4664.68, 0.225, 636.13), RENDAE(4664.68, 0.275, 869.36);
+	RENDAA(1903.00, 0. ,0.), RENDAB(2826.65, 0.075, 142.80), RENDAC(3751.05, 0.15, 354.80), RENDAD(4664.68, 0.225, 636.13), RENDAE(4664.68, 0.275, 869.36);
 
 	private Double salario, aliquota, parcelaDeduzir;
 

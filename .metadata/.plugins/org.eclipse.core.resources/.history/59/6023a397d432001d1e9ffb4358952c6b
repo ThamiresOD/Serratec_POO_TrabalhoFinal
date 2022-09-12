@@ -1,0 +1,38 @@
+package br.org.serratec.teste;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import br.org.serratec.model.Dependente;
+import br.org.serratec.model.Funcionario;
+
+public class TesteTrabalho {
+	public static void main(String[] args) {
+		List<Funcionario> funcionarios = new ArrayList<>();
+		List<Dependente> deps = new ArrayList<>();
+		Dependente dep = new Dependente("Dep", "222", LocalDate.of(2022,2,2), "FILHO");
+		Dependente dep2 = new Dependente("Dep", "222", LocalDate.of(2022,2,2), "FILHO");
+		deps.add(dep);
+		deps.add(dep2);
+		Funcionario fun1 =  new Funcionario("Nome", "1111", LocalDate.of(2022,2,2), 7000., deps);
+		funcionarios.add(fun1);
+		
+		fun1.calcularSalarioLiquido();
+		System.out.println(funcionarios);
+		System.out.println(fun1.getDependentes().size());
+	}
+
+	
+	// LEITURA DO ARQUIVO
+	
+	// CALCULOS
+	//1> INSS
+	//2> DEP
+	//3> IR
+	
+	// COMPARACAO EXCEPTIONS
+	
+	// GRAVACAO DO ARQUIVO
+	
+}
