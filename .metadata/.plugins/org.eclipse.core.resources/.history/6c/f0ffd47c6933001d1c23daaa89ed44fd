@@ -21,8 +21,8 @@ public class Funcionario extends Pessoa implements Aliquota {
 
 	@Override
 	public String toString() {
-		return "\n\nFuncionario - Nome: " + nome + 	", salarioBruto=" + salarioBruto
-				+ ", descontoINSS=" + descontoINSS + ", descontoIR=" + descontoIR + ", salarioLiquido=" + salarioLiquido
+		return "\n\nFuncionario [salarioBruto=" + salarioBruto + ", descontoINSS=" + descontoINSS + ", descontoIR="
+				+ descontoIR + ", salarioLiquido=" + salarioLiquido + ", nome=" + nome
 				+ ", cpf=" + cpf + ", dataNascimento=" + dataNascimento + ", dependentes=" + dependentes + "]";
 	}
 
@@ -49,7 +49,6 @@ public class Funcionario extends Pessoa implements Aliquota {
 	@Override
 	public void calcularSalarioLiquido() {
 		// Calculo INSS
-
 		if (salarioBruto <= EnumINSS.RENDAA.getSalario()) {
 			descontoINSS = salarioBruto * EnumINSS.RENDAA.getAliquota();
 

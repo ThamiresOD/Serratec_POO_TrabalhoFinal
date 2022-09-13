@@ -41,8 +41,8 @@ public class TesteTrabalhoSemWhile {
 				dependentes.add(new Dependente(nome, cpf, data, parentesco));
 			} else if (Double.parseDouble(lendo[3]) >= 0 || Double.parseDouble(lendo[3]) < 0){
 				double salario = Double.parseDouble(lendo[3]);
-				dependentes = new ArrayList<>(); 
 				funcionarios.add(new Funcionario(nome, cpf, data, salario, dependentes));
+				dependentes = new ArrayList<>(); 
 			}
 		}
 		
