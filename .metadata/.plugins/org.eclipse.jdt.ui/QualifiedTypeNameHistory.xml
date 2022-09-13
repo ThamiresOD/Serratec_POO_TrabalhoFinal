@@ -4,4 +4,5 @@
     <fullyQualifiedTypeName name="br.org.serratec.enums.EnumINSS"/>
     <fullyQualifiedTypeName name="br.org.serratec.enums.EnumDependente"/>
     <fullyQualifiedTypeName name="br.org.serratec.enums.EnumIR"/>
+    <fullyQualifiedTypeName name="br.org.serratec.model.Funcionario"/>
 </qualifiedTypeNameHistroy>
