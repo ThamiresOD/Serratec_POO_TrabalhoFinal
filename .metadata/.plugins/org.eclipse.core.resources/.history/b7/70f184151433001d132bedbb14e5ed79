@@ -25,26 +25,26 @@ public class TesteTrabalho {
 		
 	    while (sc.hasNextLine()) {
 	    	List<Dependente> dependentes = new ArrayList<>(); 
+	    	System.out.println("\ninicio func");
 	    	linha = sc.nextLine();
-	    	
 	    	String[] FuncTemp = linha.split(";");
 			String nomeFunc = FuncTemp[0];
 			String cpfFunc = FuncTemp[1];
 			LocalDate dataFunc = LocalDate.parse(FuncTemp[2], formatadorData);
 			double salario = Double.parseDouble(FuncTemp[3]);
-		
+			System.out.println("final func");
 			linha = sc.nextLine();
 			
 			while (!linha.isBlank()){
+				System.out.println("Dependente");
 				String[] DepTemp = linha.split(";");
 				String nomeDep = DepTemp[0];
 				String cpfDep = DepTemp[1];
 				LocalDate dataDep = LocalDate.parse(DepTemp[2], formatadorData);
 				String parentesco = DepTemp[3];
-				
 				dependentes.add(new Dependente(nomeDep, cpfDep, dataDep, parentesco));
-				
 				linha = sc.nextLine();
+				System.out.println("FInal Dep");
 			}
 	
 			funcionarios.add(new Funcionario(nomeFunc, cpfFunc, dataFunc, salario, dependentes));
