@@ -1,7 +1,7 @@
 package br.org.serratec.model;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.util.LinkedHashSet;
 
 import br.org.serratec.enums.EnumINSS;
 import br.org.serratec.enums.EnumIR;
@@ -10,10 +10,10 @@ import br.org.serratec.interfaces.Aliquota;
 public class Funcionario extends Pessoa implements Aliquota {
 
 	private Double salarioBruto, descontoINSS, descontoIR, salarioLiquido;
-	private List<Dependente> dependentes;
+	private LinkedHashSet<Dependente> dependentes;
 
 	public Funcionario(String nome, String cpf, LocalDate dataNascimento, Double salarioBruto,
-			List<Dependente> dependentes) {
+			LinkedHashSet<Dependente> dependentes) {
 		super(nome, cpf, dataNascimento);
 		this.salarioBruto = salarioBruto;
 		this.dependentes = dependentes;
@@ -21,8 +21,9 @@ public class Funcionario extends Pessoa implements Aliquota {
 
 	@Override
 	public String toString() {
-		return super.toString() + "Salario bruto: " + salarioBruto + ", Desconto INSS: "
-				+ descontoINSS + ", Desconto IR: " + descontoIR + ", Salario Líquido: " + salarioLiquido;
+		return super.toString() + "Salario bruto: " + String.format("%.2f", salarioBruto) + ", Desconto INSS: "
+				+ String.format("%.2f", descontoINSS) + ", Desconto IR: " + String.format("%.2f", descontoIR)
+				+ ", Salario Líquido: " + String.format("%.2f", salarioLiquido);
 	}
 
 	public void textoCSV() {
@@ -50,7 +51,7 @@ public class Funcionario extends Pessoa implements Aliquota {
 		return salarioLiquido;
 	}
 
-	public List<Dependente> getDependentes() {
+	public LinkedHashSet<Dependente> getDependentes() {
 		return dependentes;
 	}
 
@@ -59,7 +60,8 @@ public class Funcionario extends Pessoa implements Aliquota {
 		// Calculo INSS
 
 		if (salarioBruto <= EnumINSS.RENDAA.getSalario()) {
-			descontoINSS = salarioBruto * EnumINSS.RENDAA.getAliquota();
+			descontoINSS = salarioBruto * EnumINSS.RENDAA.getAliquota()
+					- dependentes.size() * Dependente.getVALOR_DEPENDENTE();
 
 		} else if (salarioBruto <= EnumINSS.RENDAB.getSalario()) {
 			descontoINSS = salarioBruto * EnumINSS.RENDAB.getAliquota()
@@ -75,6 +77,9 @@ public class Funcionario extends Pessoa implements Aliquota {
 
 		} else {
 			descontoINSS = EnumINSS.RENDAD.getSalario() * EnumINSS.RENDAD.getAliquota();
+		}
+		if (descontoINSS < 0) {
+			descontoINSS = 0.;
 		}
 
 		// Calculo IR
