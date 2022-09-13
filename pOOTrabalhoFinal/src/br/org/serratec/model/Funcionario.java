@@ -12,7 +12,8 @@ public class Funcionario extends Pessoa implements Aliquota {
 	private Double salarioBruto, descontoINSS, descontoIR, salarioLiquido;
 	private List<Dependente> dependentes;
 
-	public Funcionario(String nome, String cpf, LocalDate dataNascimento, Double salarioBruto, List<Dependente> dependentes) {
+	public Funcionario(String nome, String cpf, LocalDate dataNascimento, Double salarioBruto,
+			List<Dependente> dependentes) {
 		super(nome, cpf, dataNascimento);
 		this.salarioBruto = salarioBruto;
 		this.dependentes = dependentes;
@@ -20,8 +21,9 @@ public class Funcionario extends Pessoa implements Aliquota {
 
 	@Override
 	public String toString() {
-		return "Funcionario " + dataNascimento + "[salarioBruto=" + salarioBruto + ", descontoINSS=" + descontoINSS + ", descontoIR="
-				+ descontoIR + ", dependentes=" + dependentes + "]";
+		return "Funcionario [salarioBruto=" + salarioBruto + ", descontoINSS=" + descontoINSS + ", descontoIR="
+				+ descontoIR + ", salarioLiquido=" + salarioLiquido + ", nome=" + nome
+				+ ", cpf=" + cpf + ", dataNascimento=" + dataNascimento + ", dependentes=" + dependentes + "]";
 	}
 
 	public Double getSalarioBruto() {
@@ -35,7 +37,7 @@ public class Funcionario extends Pessoa implements Aliquota {
 	public Double getDescontoIR() {
 		return descontoIR;
 	}
-	
+
 	public Double getSalarioLiquido() {
 		return salarioLiquido;
 	}
@@ -43,15 +45,15 @@ public class Funcionario extends Pessoa implements Aliquota {
 	public List<Dependente> getDependentes() {
 		return dependentes;
 	}
-	
+
 	@Override
 	public void calcularSalarioLiquido() {
-		//Calculo INSS
+		// Calculo INSS
 		if (salarioBruto <= EnumINSS.RENDAA.getSalario()) {
 			descontoINSS = salarioBruto * EnumINSS.RENDAA.getAliquota();
-			
+
 		} else if (salarioBruto <= EnumINSS.RENDAB.getSalario()) {
-			descontoINSS = salarioBruto * EnumINSS.RENDAB.getAliquota() 
+			descontoINSS = salarioBruto * EnumINSS.RENDAB.getAliquota()
 					- dependentes.size() * Dependente.getVALOR_DEPENDENTE();
 
 		} else if (salarioBruto <= EnumINSS.RENDAC.getSalario()) {
@@ -61,31 +63,36 @@ public class Funcionario extends Pessoa implements Aliquota {
 		} else if (salarioBruto <= EnumINSS.RENDAD.getSalario()) {
 			descontoINSS = salarioBruto * EnumINSS.RENDAD.getAliquota()
 					- dependentes.size() * Dependente.getVALOR_DEPENDENTE();
-			
+
 		} else {
 			descontoINSS = EnumINSS.RENDAD.getSalario() * EnumINSS.RENDAD.getAliquota();
 		}
-		
-		//Calculo IR
+
+		// Calculo IR
 		if (salarioBruto <= EnumIR.RENDAA.getSalario()) {
-			descontoIR = (salarioBruto - descontoINSS) * EnumIR.RENDAA.getAliquota() - EnumIR.RENDAA.getParcelaDeduzir();
+			descontoIR = (salarioBruto - descontoINSS) * EnumIR.RENDAA.getAliquota()
+					- EnumIR.RENDAA.getParcelaDeduzir();
 
 		} else if (salarioBruto <= EnumIR.RENDAB.getSalario()) {
-			descontoIR = (salarioBruto - descontoINSS) * EnumIR.RENDAB.getAliquota() - EnumIR.RENDAB.getParcelaDeduzir(); 
+			descontoIR = (salarioBruto - descontoINSS) * EnumIR.RENDAB.getAliquota()
+					- EnumIR.RENDAB.getParcelaDeduzir();
 
 		} else if (salarioBruto <= EnumIR.RENDAC.getSalario()) {
-			descontoIR = (salarioBruto - descontoINSS) * EnumIR.RENDAC.getAliquota() - EnumIR.RENDAC.getParcelaDeduzir();
+			descontoIR = (salarioBruto - descontoINSS) * EnumIR.RENDAC.getAliquota()
+					- EnumIR.RENDAC.getParcelaDeduzir();
 
 		} else if (salarioBruto <= EnumIR.RENDAD.getSalario()) {
-			descontoIR = (salarioBruto - descontoINSS) * EnumIR.RENDAD.getAliquota() - EnumIR.RENDAD.getParcelaDeduzir();
-			
+			descontoIR = (salarioBruto - descontoINSS) * EnumIR.RENDAD.getAliquota()
+					- EnumIR.RENDAD.getParcelaDeduzir();
+
 		} else {
-			descontoIR = (salarioBruto - descontoINSS) * EnumIR.RENDAE.getAliquota() - EnumIR.RENDAE.getParcelaDeduzir();
+			descontoIR = (salarioBruto - descontoINSS) * EnumIR.RENDAE.getAliquota()
+					- EnumIR.RENDAE.getParcelaDeduzir();
 		}
-		
-		//Salario Liquido
+
+		// Salario Liquido
 		salarioLiquido = salarioBruto - descontoINSS - descontoIR;
-		
+
 	}
 
 }
