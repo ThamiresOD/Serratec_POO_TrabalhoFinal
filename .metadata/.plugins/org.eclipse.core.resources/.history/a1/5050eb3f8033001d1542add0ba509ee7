@@ -21,7 +21,7 @@ public class Funcionario extends Pessoa implements Aliquota {
 
 	@Override
 	public String toString() {
-		return super.toString() + "Salario bruto: " + salarioBruto + ", Desconto INSS: "
+		return "Funcionario: " + super.toString() + "Salario bruto: " + salarioBruto + ", Desconto INSS: "
 				+ descontoINSS + ", Desconto IR: " + descontoIR + ", Salario Líquido: " + salarioLiquido;
 	}
 

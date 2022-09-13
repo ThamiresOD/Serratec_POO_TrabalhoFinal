@@ -66,17 +66,15 @@ public class TesteTrabalhoSemWhile {
 				System.out.println("");
 			}
 		}
-		System.out.println("\n--------Pro usuario:-----------------\n");
+		System.out.println("\n\n--------Pro usuario:-----------------\n");
 		
 		for (Funcionario funcionario : funcionarios) {
-			System.out.println("Funcionario:\n" + funcionario);
-			if(funcionario.getDependentes().size() > 0) {
-				System.out.println("Dependente(s): ");
-			}
+			System.out.println(funcionario);
+			System.out.print("Dependentes: ");
 			for (Dependente dependente : funcionario.getDependentes()) {
 				System.out.print(dependente + "\n");
 			}
-			System.out.println("*************************");
+			System.out.println("");
 		}
 	}
 
