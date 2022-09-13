@@ -21,9 +21,17 @@ public class Funcionario extends Pessoa implements Aliquota {
 
 	@Override
 	public String toString() {
-		return "\n\nFuncionario - Nome: " + nome + 	", salarioBruto=" + salarioBruto
-				+ ", descontoINSS=" + descontoINSS + ", descontoIR=" + descontoIR + ", salarioLiquido=" + salarioLiquido
-				+ ", cpf=" + cpf + ", dataNascimento=" + dataNascimento + ", dependentes=" + dependentes + "]";
+		return "Funcionario: " + super.toString() + "Salario bruto: " + salarioBruto + ", Desconto INSS: "
+				+ descontoINSS + ", Desconto IR: " + descontoIR + ", Salario Líquido: " + salarioLiquido;
+	}
+
+	public void textoCSV() {
+		System.out.println(nome + ";" + cpf + ";" + dataNascimento + ";" + salarioBruto + ";" + descontoINSS + ";"
+				+ descontoIR + ";" + salarioLiquido);
+		for (Dependente dependente : dependentes) {
+			System.out.println(dependente.getNome() + ";" + dependente.getCpf() + ";" + dependente.getDataNascimento()
+					+ ";" + dependente.getParentesco());
+		}
 	}
 
 	public Double getSalarioBruto() {
