@@ -21,38 +21,41 @@ public class TesteTrabalho {
 		DateTimeFormatter formatadorData = DateTimeFormatter.ofPattern("yyyy,MM,dd");
 
 		Scanner sc = new Scanner(arquivo);
-		String linha;
+		String linha = sc.nextLine();
 		
 	    while (sc.hasNextLine()) {
 	    	List<Dependente> dependentes = new ArrayList<>(); 
-	    	linha = sc.nextLine();
-	    	
-	    	String[] FuncTemp = linha.split(";");
-			String nomeFunc = FuncTemp[0];
-			String cpfFunc = FuncTemp[1];
-			LocalDate dataFunc = LocalDate.parse(FuncTemp[2], formatadorData);
-			double salario = Double.parseDouble(FuncTemp[3]);
-		
-			linha = sc.nextLine();
-			
-			while (!linha.isBlank()){
-				String[] DepTemp = linha.split(";");
-				String nomeDep = DepTemp[0];
-				String cpfDep = DepTemp[1];
-				LocalDate dataDep = LocalDate.parse(DepTemp[2], formatadorData);
-				String parentesco = DepTemp[3];
-				
-				dependentes.add(new Dependente(nomeDep, cpfDep, dataDep, parentesco));
-				
+
+	    	if(linha.isBlank()) {
+	    		linha = sc.nextLine();
+	    	} else {
+		    	String[] FuncTemp = linha.split(";");
+				String nomeFunc = FuncTemp[0];
+				String cpfFunc = FuncTemp[1];
+				LocalDate dataFunc = LocalDate.parse(FuncTemp[2], formatadorData);
+				double salario = Double.parseDouble(FuncTemp[3]);
 				linha = sc.nextLine();
-			}
-	
-			funcionarios.add(new Funcionario(nomeFunc, cpfFunc, dataFunc, salario, dependentes));
+				
+				while (!linha.isBlank()){
+
+					String[] DepTemp = linha.split(";");
+					String nomeDep = DepTemp[0];
+					String cpfDep = DepTemp[1];
+					LocalDate dataDep = LocalDate.parse(DepTemp[2], formatadorData);
+					String parentesco = DepTemp[3];
+					
+					dependentes.add(new Dependente(nomeDep, cpfDep, dataDep, parentesco));
+					linha = sc.nextLine();
+				}
+				
+				funcionarios.add(new Funcionario(nomeFunc, cpfFunc, dataFunc, salario, dependentes));
+	    	}
 	     }
 	    
 	     sc.close();
 	     for (Funcionario funcionario : funcionarios) {
 			funcionario.calcularSalarioLiquido();
+			System.out.println(funcionario);
 		}
 	     System.out.println(funcionarios);
 		} catch (Exception e) {
@@ -62,10 +65,7 @@ public class TesteTrabalho {
 				e.printStackTrace();
 			}
 		}
-		for (Funcionario funcionario : funcionarios) {
-			funcionario.calcularSalarioLiquido();
-		}
-		System.out.println(funcionarios);
+
 	}
 
 }
