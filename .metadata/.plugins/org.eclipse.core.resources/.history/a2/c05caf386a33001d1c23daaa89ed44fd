@@ -21,7 +21,7 @@ public class Funcionario extends Pessoa implements Aliquota {
 
 	@Override
 	public String toString() {
-		return "\n\nFuncionario - Nome: " + nome + 	", salarioBruto=" + salarioBruto
+		return "Funcionario - Nome: " + nome + 	"salarioBruto=" + salarioBruto
 				+ ", descontoINSS=" + descontoINSS + ", descontoIR=" + descontoIR + ", salarioLiquido=" + salarioLiquido
 				+ ", cpf=" + cpf + ", dataNascimento=" + dataNascimento + ", dependentes=" + dependentes + "]";
 	}

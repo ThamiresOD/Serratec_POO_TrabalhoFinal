@@ -39,23 +39,19 @@ public class TesteTrabalhoSemWhile {
 			if(lendo[3].equals(RelacaoDependente.FILHO.getRelacao()) || lendo[3].equals(RelacaoDependente.SOBRINHO.getRelacao()) || lendo[3].equals(RelacaoDependente.OUTROS.getRelacao())) {
 				String parentesco = lendo[3];
 				dependentes.add(new Dependente(nome, cpf, data, parentesco));
-			} else if (Double.parseDouble(lendo[3]) >= 0 || Double.parseDouble(lendo[3]) < 0){
+			} else {
 				double salario = Double.parseDouble(lendo[3]);
-				dependentes = new ArrayList<>(); 
 				funcionarios.add(new Funcionario(nome, cpf, data, salario, dependentes));
+				dependentes = new ArrayList<>(); 
 			}
 		}
 		
 		}
 	     System.out.println(funcionarios);
 		} catch (Exception e) {
-			e.printStackTrace();
+				e.printStackTrace();
 		}
 
-		for (Funcionario funcionario : funcionarios) {
-			funcionario.calcularSalarioLiquido();
-		}
-		
 		System.out.println(funcionarios);
 	}
 
