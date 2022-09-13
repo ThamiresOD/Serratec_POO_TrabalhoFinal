@@ -56,7 +56,9 @@ public class TesteTrabalho {
 		}
 	     System.out.println(funcionarios);
 		} catch (Exception e) {
-			if (!e.getClass().equals(NoSuchElementException.class)) {
+			if (e.getClass().equals(NoSuchElementException.class)) {
+				System.out.println("Processo de leitura finalizado");
+			} else {
 				e.printStackTrace();
 			}
 		}

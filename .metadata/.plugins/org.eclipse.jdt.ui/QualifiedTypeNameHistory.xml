@@ -5,4 +5,5 @@
     <fullyQualifiedTypeName name="br.org.serratec.enums.EnumDependente"/>
     <fullyQualifiedTypeName name="br.org.serratec.enums.EnumIR"/>
     <fullyQualifiedTypeName name="br.org.serratec.model.Funcionario"/>
+    <fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
 </qualifiedTypeNameHistroy>
