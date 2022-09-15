@@ -41,7 +41,7 @@ public class TesteTrabalho {
 
 			File arquivo = new File(localArquivo);
 			Scanner sc = new Scanner(arquivo);
-
+			
 			System.out.println("---------------Arquivo CSV Original:----------------\n");
 
 			while (sc.hasNextLine()) {
@@ -115,11 +115,8 @@ public class TesteTrabalho {
 				System.out.println("*************************");
 			}
 			
-			String espacoBorda = "                                     ";
-			System.out.println("\n" + espacoBorda + " ----------------------------------------\n"
-					+ espacoBorda + "|  Novo arquivo CSV criado com sucesso!  |\n"
-					+ espacoBorda + " ----------------------------------------");
-
+			System.out.println("\n****************************************\n* Novo arquivo CSV criado com sucesso! *\n***************************");
+			
 		} catch (IdadeInvalidaException e) {
 			System.out.println(e.getMessage());
 		} catch (SalarioInvalidoException e) { // Avisa salario negativo ou nulo
@@ -134,7 +131,7 @@ public class TesteTrabalho {
 			System.out.println("Ocorreu um erro, mostre esse texto ao desenvolvedor para mais informações");
 			e.printStackTrace();
 		}
-
+		
 	}
 
 }

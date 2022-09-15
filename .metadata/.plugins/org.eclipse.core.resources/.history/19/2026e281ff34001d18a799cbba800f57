@@ -115,10 +115,10 @@ public class TesteTrabalho {
 				System.out.println("*************************");
 			}
 			
-			String espacoBorda = "                                     ";
-			System.out.println("\n" + espacoBorda + " ----------------------------------------\n"
-					+ espacoBorda + "|  Novo arquivo CSV criado com sucesso!  |\n"
-					+ espacoBorda + " ----------------------------------------");
+			String espacamento = "                                 ";
+			System.out.println("\n" + espacamento + " ----------------------------------------\n"
+					+ espacamento + "|  Novo arquivo CSV criado com sucesso!  |\n"
+					+ espacamento + " ----------------------------------------");
 
 		} catch (IdadeInvalidaException e) {
 			System.out.println(e.getMessage());

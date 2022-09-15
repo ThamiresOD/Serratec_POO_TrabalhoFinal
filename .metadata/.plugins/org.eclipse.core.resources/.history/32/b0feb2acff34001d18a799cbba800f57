@@ -115,6 +115,7 @@ public class TesteTrabalho {
 				System.out.println("*************************");
 			}
 			
+			System.out.println("\n******************************************************");
 			String espacoBorda = "                                     ";
 			System.out.println("\n" + espacoBorda + " ----------------------------------------\n"
 					+ espacoBorda + "|  Novo arquivo CSV criado com sucesso!  |\n"
