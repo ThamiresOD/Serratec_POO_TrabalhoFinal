@@ -24,6 +24,17 @@ public class Dependente extends Pessoa {
 	public static Double getVALOR_DEPENDENTE() {
 		return VALOR_DEPENDENTE;
 	}
+
+	@Override
+	public void calcularSalarioLiquido() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String criarTextoCsv() {
+		return super.criarTextoCsv() +  parentesco + "\n";
+	}
 	
 
 }
