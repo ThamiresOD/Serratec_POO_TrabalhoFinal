@@ -3,7 +3,9 @@ package br.org.serratec.model;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public abstract class Pessoa {
+import br.org.serratec.interfaces.MetodosPessoa;
+
+public abstract class Pessoa implements MetodosPessoa {
 	
 	protected String nome, cpf;
 	protected LocalDate dataNascimento;
@@ -47,5 +49,10 @@ public abstract class Pessoa {
 
 	public LocalDate getDataNascimento() {
 		return dataNascimento;
+	}
+	
+	@Override
+	public String criarTextoCsv() {
+		return nome + ";" + cpf + ";" + dataNascimento + ";";
 	}
 }
