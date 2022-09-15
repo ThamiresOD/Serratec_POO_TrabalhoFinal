@@ -3,6 +3,7 @@ package br.org.serratec.teste;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
@@ -23,6 +24,8 @@ public class TesteTrabalho {
 		String localArquivo = "C:/Users/ASUS/Serratec/pOOTrabalhoFinal/pOOFuncionarios.csv";
 		String novoArquivo = "C:/Users/ASUS/Serratec/pOOTrabalhoFinal/NovoPOOFuncionarios.csv";
 
+		String localErrorLog = "C:/Users/ASUS/Serratec/pOOTrabalhoFinal/ErrorLog.txt";
+
 		LinkedHashSet<Funcionario> funcionarios = new LinkedHashSet<>();
 		LinkedHashSet<Dependente> dependentes = new LinkedHashSet<>();
 
@@ -42,8 +45,11 @@ public class TesteTrabalho {
 			File arquivo = new File(localArquivo);
 			Scanner sc = new Scanner(arquivo);
 
+			System.out.println("---------------Arquivo CSV Original:----------------\n");
+
 			while (sc.hasNextLine()) {
 				String linha = sc.nextLine();
+				System.out.println(linha);
 				String[] var = linha.split(";");
 				if (!linha.isEmpty()) {
 					String nome = var[0];
@@ -78,7 +84,7 @@ public class TesteTrabalho {
 			}
 			sc.close();
 
-			System.out.println("---------------Novo arquivo CSV:----------------\n");
+			System.out.println("\n---------------Novo arquivo CSV:----------------\n");
 
 			// Criando novo arquivo
 			PrintWriter gravacaoArquivo = new PrintWriter(novoArquivo);
@@ -111,21 +117,48 @@ public class TesteTrabalho {
 				}
 				System.out.println("*************************");
 			}
-			
+
+			String espacoBorda = "                                     ";
+			System.out.println("\n" + espacoBorda + " ----------------------------------------\n" + espacoBorda
+					+ "|  Novo arquivo CSV criado com sucesso!  |\n" + espacoBorda
+					+ " ----------------------------------------");
+
 		} catch (IdadeInvalidaException e) {
 			System.out.println(e.getMessage());
+
 		} catch (SalarioInvalidoException e) { // Avisa salario negativo ou nulo
 			System.out.println(e.getMessage());
+
 		} catch (NumberFormatException e) {
 			System.out.println("Valor invalido em coluna do csv");
 			e.printStackTrace();
+
 		} catch (FileNotFoundException e) {
 			System.out.println("Arquivo não encontrado, verifique o diretório inserido");
 			e.printStackTrace();
+
 		} catch (Exception e) {
-			System.out.println("Ocorreu um erro, mostre esse texto ao desenvolvedor para mais informações");
-			e.printStackTrace();
+			System.out.println("\n\nOcorreu um erro não esperado, mostre o log de erro encontrado em: (" + localErrorLog
+					+ ") ao desenvolvedor para mais informações e possívels patches em um futuro próximo");
+			try {
+				PrintWriter gravacaoArquivo;
+
+				gravacaoArquivo = new PrintWriter(localErrorLog);
+
+				//Transforma o erro (StackTrace) em string
+				StringWriter sw = new StringWriter();
+				e.printStackTrace(new PrintWriter(sw));
+				String erroString = sw.toString();
+
+				gravacaoArquivo.printf("%s", erroString);
+
+				gravacaoArquivo.close();
+
+			} catch (FileNotFoundException e1) {
+				e1.printStackTrace();
+			}
 		}
+
 	}
 
 }
