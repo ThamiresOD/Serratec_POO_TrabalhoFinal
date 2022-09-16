@@ -9,4 +9,5 @@
     <fullyQualifiedTypeName name="br.org.serratec.enums.RelacaoDependente"/>
     <fullyQualifiedTypeName name="java.util.LinkedHashSet"/>
     <fullyQualifiedTypeName name="java.time.temporal.ChronoUnit"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

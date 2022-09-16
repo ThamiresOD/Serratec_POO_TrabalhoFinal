@@ -4,6 +4,6 @@ public class IdadeInvalidaException extends RuntimeException{
 	
 	@Override
 	public String getMessage() {
-		return "Idade inválida, dependente não pode ter idade maior ou igual a 18";
+		return "Não pode idade maior ou igual que 18";
 	}
 }

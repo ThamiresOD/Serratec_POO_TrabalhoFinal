@@ -4,6 +4,6 @@ public class SalarioInvalidoException extends RuntimeException {
 	
 	@Override
 	public String getMessage() {
-		return "Valor inválido no campo de salário do funcionário, são aceitos apenas valores maiores que 0";
+		return "Valor inválido no campo de salário do funcionário";
 	}
 }

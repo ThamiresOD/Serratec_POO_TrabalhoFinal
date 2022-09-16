@@ -54,10 +54,11 @@ public class TesteTrabalho {
 				String[] var = linha.split(";");
 				if (!linha.isEmpty()) {
 					String nome = var[0];
-					if (var[1].length() != 11) {
+					if (var[1].length() == 11) {
+						String cpf = var[1];
+					} else {
 						throw new CpfInvalidoException();
 					} 
-					String cpf = var[1];
 					LocalDate data = LocalDate.parse(var[2], formatoData);
 
 					// Checa se o 4º campo do CSV inclui Filho, Sobrinho ou Outros, caso seja
