@@ -11,7 +11,6 @@ import java.util.LinkedHashSet;
 import java.util.Scanner;
 
 import br.org.serratec.enums.RelacaoDependente;
-import br.org.serratec.exception.CpfInvalidoException;
 import br.org.serratec.exception.IdadeInvalidaException;
 import br.org.serratec.exception.SalarioInvalidoException;
 import br.org.serratec.model.Dependente;
@@ -54,9 +53,6 @@ public class TesteTrabalho {
 				String[] var = linha.split(";");
 				if (!linha.isEmpty()) {
 					String nome = var[0];
-					if (var[1].length() != 11) {
-						throw new CpfInvalidoException();
-					} 
 					String cpf = var[1];
 					LocalDate data = LocalDate.parse(var[2], formatoData);
 
@@ -126,9 +122,6 @@ public class TesteTrabalho {
 			System.out.println("\n" + espacoBorda + " ----------------------------------------\n" + espacoBorda
 					+ "|  Novo arquivo CSV criado com sucesso!  |\n" + espacoBorda
 					+ " ----------------------------------------");
-
-		} catch (CpfInvalidoException e) {
-			System.out.println(e.getMessage());
 
 		} catch (IdadeInvalidaException e) {
 			System.out.println(e.getMessage());
