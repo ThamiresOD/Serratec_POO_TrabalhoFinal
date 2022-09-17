@@ -1,0 +1,5 @@
+java.lang.NumberFormatException: For input string: "Sss"
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:651)
+	at br.org.serratec.teste.TesteTrabalho.main(TesteTrabalho.java:80)

@@ -6,8 +6,8 @@
 		<item value="org.eclipse.buildship:3.1.6.v20220511-1359"/>
 		<item value="org.eclipse.egit.gitflow.feature:6.2.0.202206071550-r"/>
 		<item value="org.eclipse.egit:6.2.0.202206071550-r"/>
-		<item value="org.eclipse.emf.common:2.26.0.v20220325-0806"/>
-		<item value="org.eclipse.emf.ecore:2.28.0.v20220426-0617"/>
+		<item value="org.eclipse.emf.common:2.27.0.v20220817-1401"/>
+		<item value="org.eclipse.emf.ecore:2.29.0.v20220817-1401"/>
 		<item value="org.eclipse.epp.mpc:1.10.0.v20220502-0731"/>
 		<item value="org.eclipse.help:2.3.1000.v20220607-0700"/>
 		<item value="org.eclipse.jdt:3.18.1200.v20220607-0700"/>
@@ -30,7 +30,7 @@
 		<item value="org.eclipse.tm.terminal.feature:10.7.0.202204110055"/>
 		<item value="org.eclipse.tm.terminal.view.feature:10.7.0.202204200013"/>
 		<item value="org.eclipse.userstorage:1.2.0.v20210517-0327"/>
-		<item value="org.eclipse.wb.core.feature:1.9.8.202203170939"/>
+		<item value="org.eclipse.wb.core.feature:1.10.0.202208311516"/>
 		<item value="org.eclipse.wb.core.ui.feature:1.9.8.202203170939"/>
 		<item value="org.eclipse.wst.common.fproj:3.7.3.v202111212041"/>
 		<item value="org.jboss.tools.m2e.wro4j.feature:1.1.0.201406251020"/>
