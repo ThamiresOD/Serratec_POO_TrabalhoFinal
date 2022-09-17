@@ -1,8 +1,0 @@
-package br.org.serratec.interfaces;
-
-public interface CalculoAliquota {
-	
-	Float calcularINSS();
-	Float calcularIR();
-	
-}
