@@ -35,27 +35,41 @@ dentro do próprio programa.
 `Linguagens utilizadas:`<br>
 - JAVA :coffee:<br><br>
 
+## Professor responsável:
+| [<img src="https://avatars.githubusercontent.com/u/102525341?v=4" width=115><br><sub>Professor Roni</sub>](https://github.com/roni-inf) |
+ | :---: |
+ 
+<br>
+
+## Equipe do trabalho
+### Grupo 6 | Turma 8 - Teresópolis:
+
 | [<img src="https://avatars.githubusercontent.com/u/103470533?v=4" width=115><br><sub>Ricardo Andrade</sub>](https://github.com/ric-cfan) |  [<img src="https://avatars.githubusercontent.com/u/110869594?v=4" width=115><br><sub>Lucas Cardoso</sub>](https://github.com/LucasCardosoEx) |  [<img src="https://avatars.githubusercontent.com/u/110869558?v=4" width=115><br><sub>Thamires Ouverney</sub>](https://github.com/ThamiresOD) |  [<img src="https://avatars.githubusercontent.com/u/110869785?v=4" width=115><br><sub>Cleiver Soares</sub>](https://github.com/CleiverSoares) |  [<img src="https://avatars.githubusercontent.com/u/110734237?v=4" width=115><br><sub>Fábio Gurgel</sub>](https://github.com/Fabio-Gurgel) | 
 | :---: | :---: | :---: | :---: | :---: |
 
 <br><br>
 
 Ricardo Andrade:
+https://www.linkedin.com/in/ricardo-andrade-1a242a240/
 
 <br>
 
 Fábio Gurgel:
 https://www.linkedin.com/in/f%C3%A1bio-gurgel-6b6b17240
+
 <br>
 
 Thamires Darci:
 https://www.linkedin.com/in/thamires-darci-377637242
+
 <br>
 
 Lucas Cardoso:
+https://www.linkedin.com/in/lucascardosoex/
 
 <br>
 
 Cleiver Soares:
+https://www.linkedin.com/in/cleiver-soares-b81526169
 
 <br>
