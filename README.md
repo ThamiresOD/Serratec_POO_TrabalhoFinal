@@ -33,7 +33,7 @@ dentro do próprio programa.
 <br><br>
 
 `Linguagens utilizadas:`<br>
-- JAVA :coffee:<br><br>
+- JAVA :coffee:<br><br><br>
 
 ## Professor responsável:
 | [<img src="https://avatars.githubusercontent.com/u/102525341?v=4" width=115><br><sub>Professor Roni</sub>](https://github.com/roni-inf) |
